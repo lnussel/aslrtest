@@ -1,0 +1,8 @@
+#!/bin/bash
+name="$1"
+if [ -z "$name" -o ! -x ./$name ]; then
+	echo "specify binary name"
+	exit 1
+fi
+max=${2:-2000}
+for ((i=0;i<$max;++i)) do ./$name ; done
