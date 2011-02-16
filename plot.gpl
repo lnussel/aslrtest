@@ -1,8 +1,0 @@
-set terminal png
-set output "@NAME@.png"
-set title "@TITLE@"
-set xlabel "Address"
-set ylabel "Probability in %"
-set yrange [0:.8]
-set xrange [0:256]
-plot "@NAME@.tmp" using ($3*100) with steps title ""
