@@ -1,6 +1,6 @@
 CFLAGS=-Wall -g -O2 -fpie -pie -m32
 LDLIBS=-ldl
-SAMPLES=1234
+SAMPLES=3333
 
 bins=libcaddr mainaddr
 
