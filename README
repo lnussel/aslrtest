@@ -1,3 +1,0 @@
-For some reason the binares called from make are not randomized.
-So just run the 'gensome' calls manually after running make and then
-run make again.

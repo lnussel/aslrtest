@@ -4,5 +4,8 @@ if [ -z "$name" -o ! -x ./$name ]; then
 	echo "specify binary name"
 	exit 1
 fi
+# make sets the stack limit to unlimited which enables legacy layout without
+# randomization in the kernel!
+ulimit -s 8096
 max=${2:-2000}
 for ((i=0;i<$max;++i)) do ./$name ; done
