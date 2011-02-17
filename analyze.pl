@@ -4,6 +4,8 @@ use strict;
 my $min;
 my $cnt = 0;
 
+my $page_bits = 12; # 4096
+
 my $ofile = "/dev/stdout";
 my $gnuplot;
 
@@ -29,6 +31,7 @@ open(F, '<', $file) or die "$!\n";
 while(<F>)
 {
 	chomp;
+	$_ >>= $page_bits;
 	$min = $_ unless $min; 
 	$min = $_ if $_ < $min;
 	++$cnt;
@@ -38,6 +41,7 @@ my %a;
 while(<F>)
 {
 	chomp;
+	$_ >>= $page_bits;
 	my $v = $_-$min;
 	$a{$v} ||= 0;
 	++$a{$v};
