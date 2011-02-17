@@ -8,4 +8,9 @@ fi
 # randomization in the kernel!
 ulimit -s 8096
 max=${2:-2000}
-for ((i=0;i<$max;++i)) do ./$name ; done
+step=$[max/80]
+for ((i=0;i<$max;++i)) do
+	[ $[i%step] -eq 0 ] && echo -n . >&2
+	./$name
+done
+echo >&2
