@@ -21,6 +21,12 @@ while (@ARGV) {
 		$gnuplot = shift @ARGV || die "missing argument";
 		next;
 	}
+	if ($ARGV[0] eq '--shift') {
+		shift @ARGV;
+		$page_bits = shift @ARGV;
+		die "missing argument" unless defined $page_bits;
+		next;
+	}
 	last;
 }
 
@@ -32,7 +38,7 @@ while(<F>)
 {
 	chomp;
 	$_ >>= $page_bits;
-	$min = $_ unless $min; 
+	$min = $_ unless defined $min; 
 	$min = $_ if $_ < $min;
 	++$cnt;
 }

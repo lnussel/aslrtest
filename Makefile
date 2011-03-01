@@ -7,7 +7,7 @@ ifeq ($(ARCH),i386)
 	CFLAGS+=-m32
 endif
 
-bins=libcaddr mainaddr
+bins=libcaddr textaddr
 
 all: $(bins:%=%.png)
 
