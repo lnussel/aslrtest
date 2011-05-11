@@ -1,0 +1,9 @@
+Some programs to test ASLR
+
+type 'make' to compile two test programs, run them in a loop and
+analyze the results. The output are png files that show the
+distribution of addresses. One program prints the address of libc,
+the other the address of the binary's text segment. Both graphs
+should look the same.
+
+-- lnussel@suse.de
